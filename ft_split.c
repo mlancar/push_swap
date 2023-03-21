@@ -6,7 +6,7 @@
 /*   By: malancar <malancar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:34:14 by malancar          #+#    #+#             */
-/*   Updated: 2023/03/15 20:13:42 by malancar         ###   ########.fr       */
+/*   Updated: 2023/03/21 02:20:27 by malancar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	len_wrd(char *str)
 		i++;
 		len++;
 	}
+	printf("len == %i\n", len);
 	return (len);
 }
 
@@ -58,7 +59,7 @@ int	init_split(char **tab, char *str, int i, int *j)
 	{
 		if (str[i] != 32)
 		{
-			tab[*j] = malloc(sizeof(char) * (len_wrd(str) + 1));
+			tab[*j] = malloc(sizeof(char) * (len_wrd(&str[i]) + 1));
 			if (!tab[*j])
 				return (free(tab), 0);
 			k = 0;

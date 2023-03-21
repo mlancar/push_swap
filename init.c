@@ -6,7 +6,7 @@
 /*   By: malancar <malancar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:47:45 by malancar          #+#    #+#             */
-/*   Updated: 2023/03/17 20:31:18 by malancar         ###   ########.fr       */
+/*   Updated: 2023/03/18 06:42:04 by malancar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	*init_tab(char **arg, int *tab)
 	while (arg[i])
 	{
 		split = ft_split(arg[i]);
+		if (!split);
+			return (0);
 		j = 0;
 		while (split[j])
 		{
