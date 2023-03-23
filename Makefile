@@ -6,7 +6,7 @@
 #    By: malancar <malancar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/25 02:44:56 by malancar          #+#    #+#              #
-#    Updated: 2023/03/15 20:19:02 by malancar         ###   ########.fr        #
+#    Updated: 2023/03/23 04:05:35 by malancar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ RM	= rm -f
 
 NAME	= push_swap
 
-CFLAGS	= -Wextra -Werror -Wall
+CFLAGS	= -Wextra -Werror -Wall -g
 
 SRC		= ft_atoi.c			\
 		  ft_split.c		\
@@ -33,6 +33,7 @@ SRC		= ft_atoi.c			\
 		  push_swap.c
 
 OBJ =	$(SRC:.c=.o)
+DEPS = $(SRC:.c=.d)
 
 HEADER = push_swap.h
 
@@ -42,14 +43,16 @@ $(NAME):	 $(OBJ) $(HEADER)
 		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o:	%.c
-	@$(CC) $(CFLAGS) -c -o $@ $^
+	@$(CC) $(CFLAGS) -MMD -c  $< -o $@
 
 clean:
-	@$(RM) $(OBJ)
+	@$(RM) $(OBJ) $(DEPS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(DEPS)
 
 re:	fclean all
 
-.PHONY: all fclean clean re
+-include : $(DEPS)
+
+.PHONY: all clean fclean re

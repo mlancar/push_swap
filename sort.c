@@ -6,7 +6,7 @@
 /*   By: malancar <malancar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 00:39:47 by malancar          #+#    #+#             */
-/*   Updated: 2023/03/15 19:50:04 by malancar         ###   ########.fr       */
+/*   Updated: 2023/03/23 03:46:21 by malancar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	sort_3(t_stack *stack)
 void	sort_4(t_stack *stack)
 {
 	rotate_min(stack);
-	pb(stack);
 	sort_3(stack);
 	pa(stack);
 }

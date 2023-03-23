@@ -6,7 +6,7 @@
 /*   By: malancar <malancar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:34:14 by malancar          #+#    #+#             */
-/*   Updated: 2023/03/21 02:20:27 by malancar         ###   ########.fr       */
+/*   Updated: 2023/03/23 02:56:25 by malancar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	len_wrd(char *str)
 		i++;
 		len++;
 	}
-	printf("len == %i\n", len);
 	return (len);
 }
 
